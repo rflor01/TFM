@@ -1,0 +1,16 @@
+\section{Resultados}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\definecolor{lightblue}{RGB}{173, 216, 230}
+
+\begin{table}[H]
+\begin{tabular}{l|cccccc|}
+\cline{2-7}
+                                               & \multicolumn{6}{c|}{\textbf{SR}}                                                                                                                                                                  \\ \cline{2-7}
+\textbf{}                                      & \multicolumn{2}{c|}{\textbf{SEMANTIC + RGB}}                & \multicolumn{2}{c|}{\textbf{ONLY SEMANTIC}}              & \multicolumn{2}{c|}{\textbf{PIRLNAV}}                                    \\ \cline{2-7}
+                                               & \multicolumn{1}{c|}{DINO}    & \multicolumn{1}{c|}{NO DINO} & \multicolumn{1}{c|}{DINO} & \multicolumn{1}{c|}{NO DINO} & \multicolumn{1}{l|}{DINO}                 & \multicolumn{1}{l|}{NO DINO} \\ \hline
+\multicolumn{1}{|c|}{\textbf{1630 cat}} & \multicolumn{1}{c|}{70.0\%}  & \multicolumn{1}{c|}{69.2\%}  & \multicolumn{1}{c|}{I.P(14daysstopped)}     & \multicolumn{1}{c|}{65.1\%}  & \multicolumn{1}{c|}{\multirow{2}{*}{60.8\%}} & \multirow{2}{*}{39.5\%}         \\ \cline{1-5}
+\multicolumn{1}{|c|}{\textbf{40 cat}}   & \multicolumn{1}{c|}{\cellcolor{lightblue}74.95\%} & \multicolumn{1}{c|}{74.3\%} & \multicolumn{1}{c|}{72.3\%}     & \multicolumn{1}{c|}{72.9\%}        & \multicolumn{1}{c|}{}                     &                              \\ \hline
+\end{tabular}
+\end{table}
