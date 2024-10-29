@@ -1,111 +1,45 @@
-% Formato para un capítulo cualquiera
+\chapter{Introducción}\label{ch:introduccion}
 
-%Título del capítulo
-\chapter{Introducción} 
+La habilidad del ser humano para navegar en entornos desconocidos se fundamenta en su capacidad para identificar patrones comunes entre diversas estancias.
+Esto le permite, mediante un proceso de exploración, localizar su objetivo en un espacio nunca antes visitado.
 
-\section{¿Cómo escribir tu TFG/TFM en \LaTeX{} ?}
-Escribir un \ac{TFG} o una \ac{TFM} es una tarea de gran importancia. La herramienta de edición \LaTeX{} te va a permitir editar estos documentos de una forma elegante, útil y segura. Simplemente dedicando unos minutos a comprender cómo están organizados los ficheros que acabas de descargar, y realizando algunas pruebas con ellos, podrás comenzar a escribir el tuyo.
+Esta capacidad para recorrer entornos desconocidos ha demostrado ser de gran interés para su integración en plataformas robóticas reales, debido a su versatilidad tanto funcional como comercial.
+Históricamente, en el ámbito de la robótica, la navegación ha estado estrechamente vinculada a la sensorización y al uso de tecnologías como \ac{LiDAR}, empleando técnicas como \ac{SLAM}.
+No obstante, estas aproximaciones presentan limitaciones a la hora de generalizar el problema de la navegación en entornos no explorados, además de mayores desafíos en escenarios abiertos o simétricos.
 
-\subsection{La mejor manera para aprender a programar es programando}
-\LaTeX{} es un lenguaje de programación como tantos otros a los que estás acostumbrado. Puedes encontrar mucha información y manuales en Internet, siendo el mejor sitio \cite{LatexWiki}. También te recomiendo las referencias siguientes: \cite{Latex1} y \cite{Latex2}.
+Como alternativa, actualmente se aborda este reto mediante el uso de redes neuronales entrenadas con diversos algoritmos de \textit{Deep Learning}.
+Es lo que se conoce como las soluciones de navegación basadas en aprendizaje, que emplean, principalmente, sensores visuales.
+Es por ello, que el problema recibe el nombre de Navegación Visual Semántica.
+Algunos de los trabajos más recientes en esta dirección son los siguientes\citep{ramrakhya2023,zhang2022,Huang2023}.
 
-Este documento PDF que estás leyendo ha sido generado mediante \LaTeX{} utilizando los ficheros:
-\begin{enumerate}
-\item \textit{plantilla.tex} : es el fichero principal, desde él se hacen las llamadas a los demás ficheros, que pueden ser editados de forma independiente. Si abres este fichero con cualquier editor de textos verás que contiene muchas sentencias que ahora desconoces. Puedes observar que el fichero tiene una zona de cabecera donde se incluyen todos los paquetes a utilizar. Luego se define el título del documento y su autor, para, al final, ir añadiendo los capítulos y secciones de tu \ac{TFG} o \ac{TFM}.
-\item \textit{previo.tex}: genera la hoja de calificación oficial para un \ac{TFG} o \ac{TFM} de la Universidad de Alcalá.
-\item \textit{dedicatoria.tex}: para que escribas tus dedicatorias.
-\item \textit{agradecimientos.tex}: para que escribas los agradecimientos, que seguro son muchos.
-\item \textit{resumen.tex}: aquí debes escribir un resumen de tu trabajo.
-\item \textit{introduccion.tex}: este es un capítulo modelo, en el que encontrarás los comandos utilizados para generar lo que estás ahora mismo leyendo.
-\item \textit{apendice-a.tex}: un modelo de apéndice, muy utilizado en un \ac{TFG} o \ac{TFM} cuando queremos incluir en el documento final código fuente, manuales de usuario, \ldots
-\item \textit{bibliografia-pfc.bib} : este es un fichero \textit{.bib} (no lleva la extensión .tex como los anteriores). Es un fichero de bibliografía \textbf{BibTex}. La bibliografía es una parte fundamental de un \ac{TFG}, y es por ello que debemos poner especial cuidado a la hora de editarla, ya que va a permitir que futuros lectores de tu \ac{TFG} o \ac{TFM}, que seguro serán muchos, puedan acudir a las referencias cuando no entiendan algo, o cuando pretendan retomar tu trabajo y continuar con él para mejorarlo. Sobre BibTex también existen muchos manuales, pero encontrarás información útil en \cite{bibtex1}. Para manejar tu bibliografía te recomiendo el programa JabRef\footnote{En Ubuntu está disponible, o si prefieres, puedes descargar la última versión de la página oficial \url{http://jabref.sourceforge.net/}}.
-\end{enumerate}
+El entrenamiento de estas soluciones se lleva a cabo en entornos virtuales, donde un agente tiene la capacidad de desplazarse por espacios reales renderizados.
+Esta metodología permite acelerar el proceso de aprendizaje al aprovechar máquinas especializadas en computación paralela, y algoritmos diversos como el aprendizaje por refuerzo o el aprendizaje por imitación.
 
-Para probar que todo esto funciona sólo tienes que compilar el fichero \textit{tfc.tex}, ¿pero cómo?. Evidentemente necesitas un compilador. Veamos que opciones existen:
+Con el fin de demostrar y comparar la capacidad de navegación de estos agentes, se les asigna la tarea de localizar un objeto dentro de estancias renderizadas, las cuales no han explorado previamente.
 
-\begin{enumerate}
-\item \textbf{\underline{Plataforma Linux (Unix)}}: simplemente necesitas tener instalado el compilador \textit{latex}, que suele estar incluido en un paquete con el mismo nombre. Existen entornos de trabajo bastante agradables y útiles, como son \textit{Kile} o \textit{TexMaker}, sobre los que podrás editar tus documentos de forma cómoda, gráfica y sencilla. También puedes utilizar la herramienta \textit{Lyx}, que te permite saber cómo va quedando tu documento a medida que escribes, sin necesidad de primero editar el código y luego compilar, es decir, es un software de filosofía WYSIWYM (What You See Is What You Mean). O incluso puedes trabajar con editores LaTex online como \textit{Overleaf}.
-\item \textbf{\underline{Otras plataformas}}: para trabajar con \LaTeX{} sobre otros sistemas operativos dispones de gran cantidad de software. Simplemente voy a indicarte algunas herramientas que son de libre distribución:
-\begin{itemize}
-\item Compilador: el único que conozco es \textit{MikTex}, lo puedes descargar de su web oficial.
-\item Editor: puedes utilizar TexMaker que es de libre distribución.
-\end{itemize}
-\end{enumerate}
+Se ha demostrado que estos agentes son capaces de alcanzar altos porcentajes de éxito en la consecución de sus objetivos dentro de entornos virtuales.
+No obstante, cuando se implementan estas redes en el mundo real, surgen desafíos relacionados con la \textit{\textbf{adaptación de dominio}}.
+Estos problemas se deben, en parte, a la menor precisión de los sensores y a factores inherentes al entorno físico, como variaciones en la iluminación.
 
-Una sugerencia: \textbf{\textit{¿no crees que es un buen momento para trabajar desde Linux?}}. Si no tienes este sistema operativo en tu ordenador, prueba a instalar la distribución \textit{Ubuntu} (http://www.ubuntu.com), es realmente sencillo funcionar con ella, y además puedes descargarla desde la web.
+El propósito de estas redes neuronales es emular el comportamiento humano, lo cual explica que las entradas a las redes correspondan habitualmente a los mismos estímulos sensoriales que utilizan los seres humanos.
+Por esta razón, se emplean de manera predominante imágenes RGB, odometría y cámaras de profundidad.
+Sin embargo, el ser humano no se desplaza únicamente en función de las imágenes que percibe, sino que también otorga un sentido semántico a los objetos dentro de esas imágenes.
+De este modo, es capaz de identificar rápidamente la función de cada elemento que observa, como suelos, paredes, armarios o sillas, asignándoles una categoría semántica de manera casi instantánea.
 
+Esta capacidad para categorizar visualmente ha sido abordada con gran éxito en el campo de la visión artificial.
+En la actualidad, contamos con segmentadores semánticos que han demostrado un rendimiento sobresaliente\cite{Seichter2020EfficientRS}.
 
-Ahora que conoces algunas herramientas, debes probar a compilar el fichero \textit{plantilla.tex} hasta que obtengas como resultado este pdf.
+En este proyecto, pretendemos estudiar el impacto que los sensores de segmentación semántica tienen en los modelos de navegación visual semántica.
+Postulamos que son una fuente de información que puede aliviar el problema de la adaptación de dominio, y, por lo tanto, el desarrollo de modelos de navegación que puedan funcionar en el mundo real, y no solo en entornos virtuales.
 
-\subsection{Algunos detalles más}
+Así, en este trabajo, proponemos desarrollar soluciones de navegación visual semántica empleando aprendizaje por imitación (\textbf{IL} (Imitation Learning)) que recibirán imágenes de segmentación semántica como entrada.
+Posteriormente, se comparará su rendimiento con respecto a modelos que utilizan imágenes RGB, tanto en entornos virtuales como en escenarios del mundo real.
 
-Con \LaTeX{} puedes editar tus propias tablas (Tabla \ref{tabla:primera}), e incluso añadir gráficos a tus documentos (Figura \ref{grafico:primero}). A la hora de añadir un gráfico la mejor opción es trabajar con formatos de imagen \textit{.pdf}, vectorial preferiblemente, aunque puedes incrustar imágenes en formato bmp, jpg y otros muchos.
-
-\begin{table}
-\begin{center}
-\begin{tabular}{|c|c|c|}\hline
-\textbf{Medida} & \textbf{Error} & \textbf{Porcentaje} \% \\ \hline
-12 & 23.6 & 22 \\ \hline
--1 & 13 & 4 \\ \hline
-6 & 3 & 4 \\ \hline
-\end{tabular}
-\caption[El título corto de la tabla.]{El título de la tabla.}
-\label{tabla:primera}
-\end{center}
-\end{table}
+En la figura\ref{fig:semnav} proponemos una representación del tipo de soluciones que se van a desarrollar, denominadas como SemNav, puede observarse como a la entrada de la red se ingresará información de segmentación semántica, complementada con otro tipo de información, que ayudará al modelo a completar la navegación en entornos desconocidos.
 
 \begin{figure}
-\begin{center}
-\includegraphics[width=4cm]{figuras/logo-uah.pdf}\\
-\end{center}
-\caption[El título corto de la gráfica.]{El título de la gráfica.}
-\label{grafico:primero}
+    \centering
+    \includegraphics[width=\textwidth]{figuras/semnav_model}
+    \caption{Modelo SEMNav para la navegación basada en información de segmentación semántica del entorno.}
+    \label{fig:semnav}
 \end{figure}
-
-
-\LaTeX{} también te permite editar ecuaciones de forma muy sencilla y realmente elegante, observa.
-\begin{equation}
-I = \! \int_{-\infty}^\infty f(x)\,dx \label{eq:fine}.
-\end{equation}
-
-\begin{equation}
-\label{eq:mdiv}
-m(T) =
-\begin{cases}
-0 & \text{$T > T_c$} \\
-\bigl(1 - [\sinh 2 \beta J]^{-4} \bigr)^{\! 1/8} & \text{$T < T_c$}
-\end{cases}
-\end{equation}
-
-\begin{align}
-\textbf{T} &=
-\begin{pmatrix}
-T_{++} \hfill & T_{+-} \\
-T_{-+} & T_{--} \hfill 
-\end{pmatrix} , \nonumber \\
-& =
-\begin{pmatrix}
-e^{\beta (J + B)} \hfill & e^{-\beta J} \hfill \\
-e^{-\beta J} \hfill & e^{\beta (J - B)} \hfill
-\end{pmatrix}.
-\end{align}
-
-\section{Recomendaciones importantes finales}
-Antes de enviarme como tutor un copia de tu trabajo para revisar, asegúrate de que has realizado las siguientes tareas:
-\begin{enumerate}
- \item Pasar un corrector ortográfico. Kile trae uno incorporado. No seguiré revisando ningún documento que contenga más de 3 faltas de ortografía.
- \item Leer lo que hemos escrito y revisarlo hasta que tenga coherencia. No seguiré revisando ningún documento que contenga más de 3 frases que no se entiendan.
- \item Las ecuaciones forman parte del texto, y deben puntuarse. Además, debemos prestar especial atención a las variables que manejamos. No debemos definir dos variables diferentes para representar el mismo concepto. Debe haber consistencia en la formulación matemática.
- \item Todas la figuras que se incluyen deben citarse en el texto. Lo mismo ocurre con las tablas. Debes aprender a manejar los comandos \verb+\label+ y \verb+\ref+.
- \item La Bibliografía es FUNDAMENTAL. Cita bien y cita mucho.  Debes aprender a manejar el comando \verb+\cite+ y a tener una base de datos con todas tus lecturas en formato BibTex.
- \item En la redacción del proyecto procura mantener un estilo serio. Se trata de un documento oficial.
-\end{enumerate}
-
-
-\section{Para terminar}
-En el fichero \textit{introduccion.tex} encontrarás todo el código que se ha utilizado para generar este capítulo, échale un vistazo y trata de entender todo aquello que está escrito en él. Si consigues generar este documento pdf de nuevo, es que estás preparado para editar tu propio \ac{TFG} incluyendo los nuevos capítulos que necesites.
-
-\begin{center}
-\begin{large}\textbf{Adelante y buena suerte.}\end{large}
-\end{center}
-

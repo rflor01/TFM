@@ -19,13 +19,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
 \usepackage{verbatim}
-\usepackage{amssymb}
-\usepackage{xcolor}
 \usepackage{amsmath}
 \usepackage{acronym}
 \usepackage{fancyhdr}
-\usepackage{graphicx}
-\usepackage{caption}
 \usepackage{multicol}
 \usepackage{makeidx}
 \usepackage{float}
@@ -36,21 +32,21 @@
 \usepackage{listings}
 \lstset{language = Pascal}
 \lstset{literate=
-  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
-  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
-  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
-  {À}{{\`A}}1 {È}{{\`E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
-  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
-  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
-  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
-  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
-  {ã}{{\~a}}1 {ẽ}{{\~e}}1 {ĩ}{{\~i}}1 {õ}{{\~o}}1 {ũ}{{\~u}}1
-  {Ã}{{\~A}}1 {Ẽ}{{\~E}}1 {Ĩ}{{\~I}}1 {Õ}{{\~O}}1 {Ũ}{{\~U}}1
+  {á}{{}}1 {é}{{Áé}}1 {í}{{í}}1 {ó}{{ó}}1 {ú}{{ú}}1
+  {Á}{{Á}}1 {É}{{É}}1 {Í}{{Í}}1 {Ó}{{Ó}}1 {Ú}{{Ú}}1
+  {à}{{à}}1 {è}{{è}}1 {ì}{{ì}}1 {ò}{{ò}}1 {ù}{{ù}}1
+  {À}{{À}}1 {È}{{È}}1 {Ì}{{Ì}}1 {Ò}{{Ò}}1 {Ù}{{Ù}}1
+  {ä}{{ä}}1 {ë}{{ë}}1 {ï}{{ï}}1 {ö}{{ö}}1 {ü}{{ü}}1
+  {Ä}{{Ä}}1 {Ë}{{Ë}}1 {Ï}{{Ï}}1 {Ö}{{Ö}}1 {Ü}{{Ü}}1
+  {â}{{â}}1 {ê}{{ê}}1 {î}{{î}}1 {ô}{{ô}}1 {û}{{û}}1
+  {Â}{{Â}}1 {Ê}{{Ê}}1 {Î}{{Î}}1 {Ô}{{Ô}}1 {Û}{{Û}}1
+  {ã}{{ã}}1 {ẽ}{{ẽ}}1 {ĩ}{{ĩ}}1 {õ}{{õ}}1 {ũ}{{ũ}}1
+  {Ã}{{Ã}}1 {Ẽ}{{Ẽ}}1 {Ĩ}{{Ĩ}}1 {Õ}{{Õ}}1 {Ũ}{{Ũ}}1
   {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
   {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
-  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {Ø}{{\O}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {ç}{{ç}}1 {Ç}{{Ç}}1 {ø}{{\o}}1 {Ø}{{\O}}1 {å}{{\r a}}1 {Å}{{\r A}}1
   {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
-  {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1 {¡}{{!`}}1
+  {»}{{\guillemotright}}1 {ñ}{{ñ}}1 {Ñ}{{Ñ}}1 {¿}{{?`}}1 {¡}{{!`}}1
 }
 
 
@@ -111,6 +107,7 @@
 \usepackage{subcaption}
 \usepackage{colortbl}
 \usepackage{matlab-prettifier}
+\usepackage{eurosym}
 %\usepackage{utils/symbols}
 
 
@@ -133,7 +130,7 @@
 %*************
 %Definiciones
 %*************
-\deactivatetilden 
+\deactivatetilden
 \addto\captionsspanish{\def\tablename{Tabla}\def\listtablename{Lista
 de tablas}\def\listfigurename{Lista de figuras}}
 %Cambios en los márgenes
@@ -213,22 +210,11 @@ de tablas}\def\listfigurename{Lista de figuras}}
 
 %Incluye Introducción (fichero introduccion.tex)
 \include{introduccion}
+\include{setup}
 \include{results}
-
-%Incluye un capítulo cualquiera (capitulo-cualquiera.tex)
-%\include{capitulo-cualquiera}
-
-
-%Prepara la sección de apéncices, si es que se necesita.
-\appendix
-\include{apendice-a}
-%\include{fichero-apendice-b}
 
 
 \backmatter
-
-\nocite{*}
-
 
 
 %*****************************
